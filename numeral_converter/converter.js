@@ -1,4 +1,4 @@
-var num = prompt ("Please type in any number or roman numeral");
+var num = prompt("Please type in any number or roman numeral");
 
 
 //Need toRoman function for converting decimal to roman numeral
@@ -39,6 +39,6 @@ var decimal = '';
       decimal -= romanNumeral[i];
     }
   }
-  return toDecimal(num);
+  return alert(toDecimal(num));
     
 };
