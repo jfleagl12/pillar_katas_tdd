@@ -50,3 +50,10 @@ if(isNaN(input)) {
 } else {
     toRoman(input);
 };
+
+// other check for string or number
+// if(typeof input == "string") {
+//     toDecimal(input);
+// } else {
+//     toRoman(input);
+// };
