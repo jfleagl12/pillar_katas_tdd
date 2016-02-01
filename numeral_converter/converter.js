@@ -1,4 +1,4 @@
-var num = prompt("Please type in any number or roman numeral");
+var input = prompt("Please type in any number or roman numeral");
 
 
 //Need toRoman function for converting decimal to roman numeral
@@ -20,13 +20,13 @@ var romanized = '';
   }
     return alert(romanized);
 };
-toRoman(num);
+
 
 
 
 
 //Need toDecimal function for converting roman numeral to decimal
-var toDecimal = function(num) {
+var toDecimal = function(str) {
 // 2 arrays for roman and decimal values
 var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
 var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
@@ -34,12 +34,19 @@ var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V',
 var decimal = '';   
  
  for (var i = 0; i < romanNumeral.length; i++) {
-  while (romanNumeral[i] <= num) {
+  while (romanNumeral[i] <= str) {
       decimal += decimalValue[i];
-      num -= romanNumeral[i];
+      str -= romanNumeral[i];
     }
   }
   return alert(decimal);
     
 };
-toDecimal(num);
+
+
+//need an if/else statement to run particular function dependent upon user input.
+if(isNaN(input)) {
+    toDecimal(input);
+} else {
+    toRoman(input);
+};
