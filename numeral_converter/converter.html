@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    var input = prompt("Please type in any number or roman numeral");
+
+      //Need toRoman function for converting decimal to roman numeral
+      var toRoman = function(num) {
+      // 2 arrays for roman and decimal values
+      var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+      var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+      //Variable to store empty string
+      var romanized = '';
+
+      // Next step Loops through the indices of the decimalValue array.
+        for (var i = 0; i < decimalValue.length; i++) {
+          // Continue to loop while the value at the current index will fit into num.
+          while (decimalValue[i] <= num) {
+            // Add the Roman numeral & decrease num by the decimal equivalent.
+            romanized += romanNumeral[i];
+            num -= decimalValue[i];
+          }
+        }
+          return alert(romanized);
+    };
+
+
+  // Use to rewrite toDecimal function
+  function toDecimal (str) {
+    var	str = str.toUpperCase(),
+      validator = /^M*(?:D?C{0,3}|C[MD])(?:L?X{0,3}|X[CL])(?:V?I{0,3}|I[XV])$/,
+      token = /[MDLV]|C[MD]?|X[CL]?|I[XV]?/g,
+      key = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,III:3,II:2,I:1},
+      num = 0, m;
+    if (!(str && validator.test(str))){
+      return false;
+    } while (m = token.exec(str)) {
+      num += key[m[0]];
+    return alert(num);
+    }
+  };
+
+//need an if/else statement to run particular function dependent upon user input.
+  if(isNaN(input)) {
+      toDecimal(input);
+  } else {
+      toRoman(input);
+  }
+
+
+
+// Original function
+// //Need toDecimal function for converting roman numeral to decimal
+// var toDecimal = function(str) {
+// // 2 arrays for roman and decimal values
+// var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+// var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+//  //Variable to store empty string
+// var decimal = '';
+//
+//  for (var i = 0; i < romanNumeral.length; i++) {
+//   while (romanNumeral[i] <= str) {
+//       decimal += decimalValue[i];
+//       str -= romanNumeral[i];
+//     }
+//   }
+//   return alert(decimal);
+//
+// };
+
+
+
+
+
+
+
+
+// other check for string or number
+// if(typeof input == "string") {
+//     toDecimal(input);
+// } else {
+//     toRoman(input);
+// };
+
+    </script>
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
-//Fail test first for converter.js
+//Fail test first for converter.html
 
 //Test for toRoman function
-var toRoman = require('/converter.js');
+var toRoman = require('/converter.html');
 
 describe("toRoman()", function() {
   it("converts 1", function() {
@@ -10,7 +10,7 @@ describe("toRoman()", function() {
 }); 
   
 //Test for toDecimal function
-var toDecimal = require('/converter.js');
+var toDecimal = require('/converter.html');
 
 describe("toDecimal()", function() {
   it("converts I", function() {
